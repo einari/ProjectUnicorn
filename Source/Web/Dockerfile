@@ -1,13 +1,13 @@
-FROM microsoft/dotnet:latest
+FROM ubuntu:14.04
+FROM microsoft/dotnet:1.0-core
 
-COPY . /app
-
+COPY bin/Debug/netcoreapp1.0/publish/. /app
 WORKDIR /app
 
-RUN ["dotnet", "restore"]
+# RUN ["dotnet", "restore"]
 
-RUN ["dotnet", "build"]
+# RUN ["dotnet", "build"]
 
 EXPOSE 5000/tcp
 
-CMD ["dotnet", "run", "--server.urls", "http://*:5000"]
+CMD ["dotnet", "Web.dll", "--server.urls", "http://*:5000"]
