@@ -2,15 +2,43 @@
     "name": "web",
     "version": "1.0.0",
     "description": "We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.",
-    "main": "index.js",
+    "main": "web.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "jspm": {
+        "dependencies": {},
         "devDependencies": {
             "babel": "npm:babel-core@^5.8.24",
             "babel-runtime": "npm:babel-runtime@^5.8.24",
-            "core-js": "npm:core-js@^1.1.4"
+            "core-js": "npm:core-js@^1.1.4",
+            "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
+            "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
+            "plugin-babel": "npm:systemjs-plugin-babel@^0.0.15",
+            "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
+        },
+        "overrides": {
+            "npm:babel-core@5.8.38": {
+                "main": "browser.js",
+                "dependencies": {},
+                "jspmNodeConversion": false,
+                "map": {
+                    "regenerator/runtime": "babel-runtime/regenerator/runtime"
+                },
+                "meta": {
+                    "browser.js": {
+                        "exports": "babel",
+                        "format": "global"
+                    }
+                }
+            },
+            "npm:babel-runtime@5.8.38": {
+                "main": false,
+                "dependencies": {},
+                "optionalDependencies": {
+                    "core-js": "^1.2.0"
+                }
+            }
         }
     },
     "dependencies": {
