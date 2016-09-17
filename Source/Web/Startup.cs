@@ -40,9 +40,12 @@ namespace Web
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            var folder = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot");
+            Console.WriteLine(folder);
+
             app.UseStaticFiles(new StaticFileOptions
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot")),
+                FileProvider = new PhysicalFileProvider(folder),
                 RequestPath = new PathString(string.Empty)
             });
 
