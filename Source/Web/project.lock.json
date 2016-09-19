@@ -621,7 +621,7 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.Routing.Abstractions.dll": {}
         }
       },
-      "Microsoft.AspnetCore.Server.IISIntegration/1.0.0": {
+      "Microsoft.AspNetCore.Server.IISIntegration/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
@@ -3904,10 +3904,10 @@
         "lib/netstandard1.3/Microsoft.AspNetCore.Routing.Abstractions.xml"
       ]
     },
-    "Microsoft.AspnetCore.Server.IISIntegration/1.0.0": {
+    "Microsoft.AspNetCore.Server.IISIntegration/1.0.0": {
       "sha512": "xmn6EivvL4Ymo7LP+Jc49WLcIiYsUiujZo0loEbAg473nY2dIHxcxncpFAKzPf/MzqN0qBtaXEP0igYJ813H3Q==",
       "type": "package",
-      "path": "Microsoft.AspnetCore.Server.IISIntegration/1.0.0",
+      "path": "Microsoft.AspNetCore.Server.IISIntegration/1.0.0",
       "files": [
         "Microsoft.AspNetCore.Server.IISIntegration.1.0.0.nupkg.sha512",
         "Microsoft.AspNetCore.Server.IISIntegration.nuspec",
@@ -9262,9 +9262,9 @@
     "": [
       "Microsoft.AspNetCore.Mvc >= 1.0.0",
       "Microsoft.AspNetCore.Routing >= 1.0.0",
+      "Microsoft.AspNetCore.Server.IISIntegration >= 1.0.0",
       "Microsoft.AspNetCore.Server.Kestrel >= 1.0.0",
       "Microsoft.AspNetCore.StaticFiles >= 1.0.0",
-      "Microsoft.AspnetCore.Server.IISIntegration >= 1.0.0",
       "Microsoft.Extensions.Configuration.CommandLine >= 1.0.0",
       "Microsoft.Extensions.Configuration.EnvironmentVariables >= 1.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 1.0.0",
