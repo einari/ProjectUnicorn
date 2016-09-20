@@ -32,7 +32,8 @@
         "Microsoft.DotNet.Watcher.Tools": {
             "version": "1.0.0-*",
             "imports": "portable-net451+win8"
-        }
+        },
+        "Microsoft.AspNetCore.Server.IISIntegration":"1.0.0"
     },
     "buildOptions": {
         "emitEntryPoint": true,
@@ -52,6 +53,7 @@
     },
     "scripts": {
         "prepublish": [
+            
         ],
         "postpublish": [
             "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
