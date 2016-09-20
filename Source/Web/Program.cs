@@ -11,13 +11,13 @@ namespace Web
         {
             var config = new ConfigurationBuilder()
                 .AddCommandLine(args)
-                .AddJsonFile("hosting.json", optional: true)
+                //.AddJsonFile("hosting.json", optional: true)
                 .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
 
             var host = new WebHostBuilder()
                 .UseConfiguration(config)
-                //.UseUrls("http://*:80")
+                .UseUrls("http://*:8000")
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
