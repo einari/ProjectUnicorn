@@ -11,6 +11,7 @@ namespace Web
         {
             var config = new ConfigurationBuilder()
                 .AddCommandLine(args)
+                .AddJsonFile("hosting.json", optional: true)
                 .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
 
