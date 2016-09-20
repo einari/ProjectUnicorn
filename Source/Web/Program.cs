@@ -16,6 +16,7 @@ namespace Web
 
             var host = new WebHostBuilder()
                 .UseConfiguration(config)
+                .UseUrls("http://*:80")
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
