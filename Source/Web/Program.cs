@@ -14,6 +14,7 @@ namespace Web
                 //.AddJsonFile("hosting.json", optional: true)
                 .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
+                
 
             var host = new WebHostBuilder()
                 .UseConfiguration(config)
