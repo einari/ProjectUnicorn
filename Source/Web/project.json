@@ -48,12 +48,12 @@
         "include": [
             "wwwroot",
             "appsettings.json",
+            "hosting.json",
             "web.config"
         ]
     },
     "scripts": {
         "prepublish": [
-            
         ],
         "postpublish": [
             "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
