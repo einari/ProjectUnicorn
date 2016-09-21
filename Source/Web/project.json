@@ -33,7 +33,7 @@
             "version": "1.0.0-*",
             "imports": "portable-net451+win8"
         },
-        "Microsoft.AspNetCore.Server.IISIntegration":"1.0.0"
+        "Microsoft.AspNetCore.Server.IISIntegration":"1.0.0-preview2-final"
     },
     "buildOptions": {
         "emitEntryPoint": true,
@@ -54,6 +54,7 @@
     },
     "scripts": {
         "prepublish": [
+            
         ],
         "postpublish": [
             "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
