@@ -40,6 +40,7 @@ namespace Web
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+/*
             var folder = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot");
             Console.WriteLine(folder);
 
@@ -47,7 +48,7 @@ namespace Web
             {
                 FileProvider = new PhysicalFileProvider(folder),
                 RequestPath = new PathString(string.Empty)
-            });
+            });*/
 
             app.UseMvc();
         }
