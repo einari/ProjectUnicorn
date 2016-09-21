@@ -9296,16 +9296,16 @@
           "lib/netcoreapp1.0/dotnet-watch.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Server.IISIntegration/1.0.0": {
+      "Microsoft.AspNetCore.Server.IISIntegration/1.0.0-rc2-20744": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
-          "Microsoft.AspNetCore.Http": "1.0.0",
-          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
-          "Microsoft.AspNetCore.HttpOverrides": "1.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Options": "1.0.0",
-          "System.Security.Principal.Windows": "4.0.0"
+          "Microsoft.AspNetCore.Hosting": "1.0.0-rc2-20744",
+          "Microsoft.AspNetCore.Http": "1.0.0-rc2-20744",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0-rc2-20744",
+          "Microsoft.AspNetCore.HttpOverrides": "1.0.0-rc2-20744",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc2-20744",
+          "Microsoft.Extensions.Options": "1.0.0-rc2-20744",
+          "System.Security.Principal.Windows": "4.0.0-rc2-24027"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.AspNetCore.Server.IISIntegration.dll": {}
@@ -9318,7 +9318,7 @@
   },
   "projectFileToolGroups": {
     ".NETCoreApp,Version=v1.0": [
-      "Microsoft.AspNetCore.Server.IISIntegration >= 1.0.0",
+      "Microsoft.AspNetCore.Server.IISIntegration >= 1.0.0-preview2-final",
       "Microsoft.DotNet.Watcher.Tools >= 1.0.0-*"
     ]
   }
