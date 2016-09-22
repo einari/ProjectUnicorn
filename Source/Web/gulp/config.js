@@ -30,6 +30,8 @@ class paths {
     get html() {
         return [
             `${this.rootDir}/**/*.html`,
+            `!${this.rootDir}/bin/**/*`,
+            `!${this.rootDir}/bower_components/**/*`,
             `!${this.rootDir}/jspm_packages/**/*`,
             `!${this.rootDir}/node_modules/**/*`,
             `!${this.outputDir}/**/*`
@@ -39,6 +41,8 @@ class paths {
     get javascript() {
         return [
             `${this.sourceDir}/**/*.js`,
+            `!${this.rootDir}/bower_components/**/*`,
+            `!${this.rootDir}/bin/**/*`,
             `!${this.rootDir}/jspm_packages/**/*`,
             `!${this.rootDir}/node_modules/**/*`,
             `!${this.outputDir}/**/*`,
@@ -53,6 +57,7 @@ class paths {
     get less() {
         return [
             `${this.rootDir}/**/*.less`,
+            `!${this.rootDir}/bower_components/**/*`,
             `!${this.rootDir}/jspm_packages/**/*`,
             `!${this.rootDir}/node_modules/**/*`,
             `!${this.outputDir}/**/*`
