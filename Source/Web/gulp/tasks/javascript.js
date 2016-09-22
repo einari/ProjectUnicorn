@@ -17,12 +17,13 @@ export function javaScriptPipeline(stream)
 {
     let root = path.resolve("./");
     
+
     stream
         .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ["es2015"],
             sourceMaps: true
-            //sourceRoot: "../",
+            //sourceRoot: "../"
             //sourceMaps: "inline"
         }))
         .on("error", (error) => {
@@ -31,17 +32,12 @@ export function javaScriptPipeline(stream)
             console.log(error.message);
             console.log(error.codeFrame);
         })
-        
-        //.pipe(gulp_jspm())
-        //.pipe(concat("all.js"))
-        .pipe(sourcemaps.write("./", {
-            sourceRoot: file => {
-                console.log("File : "+file.path);
-                
-                let directory = path.dirname(file.path);
-                directory = directory.substr(root.length);
-                return `..${directory}`;
-            }
+        .pipe(sourcemaps.write(".", {
+            mapSources: file => {
+                console.log("Hello");
+                return "Blah"
+            },
+            sourceRoot: "../"
         }))
         .pipe(gulp.dest(config.paths.outputDir));
     
