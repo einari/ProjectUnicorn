@@ -8,6 +8,7 @@
   },
   "jspm": {
     "dependencies": {
+      "html": "github:Hypercubed/systemjs-plugin-html@^0.0.8",
       "knockout": "github:knockout/knockout@^3.4.0"
     },
     "devDependencies": {

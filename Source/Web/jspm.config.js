@@ -44,7 +44,14 @@ SystemJS.config({
     "github:*/*.json"
   ],
   map: {
+    "html": "github:Hypercubed/systemjs-plugin-html@0.0.8",
     "knockout": "github:knockout/knockout@3.4.0"
   },
-  packages: {}
+  packages: {
+    "github:Hypercubed/systemjs-plugin-html@0.0.8": {
+      "map": {
+        "webcomponentsjs": "github:webcomponents/webcomponentsjs@0.7.22"
+      }
+    }
+  }
 });
