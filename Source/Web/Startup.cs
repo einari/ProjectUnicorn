@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -40,15 +37,14 @@ namespace Web
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-/*
-            var folder = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot");
-            Console.WriteLine(folder);
+            var folder = Path.Combine(env.ContentRootPath, @"wwwroot");
+            Console.WriteLine($"Static Content is at {folder}");
 
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(folder),
                 RequestPath = new PathString(string.Empty)
-            });*/
+            });
 
             app.UseMvc();
         }
