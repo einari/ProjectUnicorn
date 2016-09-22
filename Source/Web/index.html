@@ -1,9 +1,39 @@
+<!doctype html>
 <html>
-    <body>
-        Hello world
 
+<head>
+    <title>The ultimate</title>
 
-        <script src="index.js"></script>
+    <link rel="stylesheet" href="Content/styles.css">
+</head>
 
-    </body>
+<body>
+    <div data-bind="text: timer"></div>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="jspm.config.js"></script>
+
+    <script>
+        System.cacheBust = "?bust="+Date.now();
+        var systemLocate = System.locate;
+
+        System.locate = function (load) {
+            var System = this;
+            return Promise.resolve(systemLocate.call(this, load))
+                .then(function (address) {
+                    if (address.lastIndexOf("html.js") > -1) return address;
+                    return address + System.cacheBust;
+                });
+        };
+
+        Promise.all([
+            System.import("knockout"),
+            System.import("index.js")
+        ]).then(function(modules) {
+            var index = new modules[1].index();
+            modules[0].applyBindings(index);
+        });
+    </script>
+</body>
+
 </html>
