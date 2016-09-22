@@ -43,6 +43,8 @@ SystemJS.config({
     "npm:*.json",
     "github:*/*.json"
   ],
-  map: {},
+  map: {
+    "knockout": "github:knockout/knockout@3.4.0"
+  },
   packages: {}
 });
