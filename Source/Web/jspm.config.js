@@ -1,4 +1,5 @@
 SystemJS.config({
+  defaultJSExtensions: true,    
   browserConfig: {
     "paths": {
       "npm:": "/jspm_packages/npm/",
@@ -45,6 +46,7 @@ SystemJS.config({
   ],
   map: {
     "html": "github:Hypercubed/systemjs-plugin-html@0.0.8",
+    "jquery": "npm:jquery@3.1.1",
     "knockout": "github:knockout/knockout@3.4.0"
   },
   packages: {
