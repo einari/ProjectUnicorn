@@ -5,6 +5,9 @@
         <tr>
             <td data-bind="text: title">
             </td>
+            <td>
+                <button data-bind="click: $root.addToCart.bind($root, $data)">Add</button>
+            </td>
         </tr>
     </tbody>
 
