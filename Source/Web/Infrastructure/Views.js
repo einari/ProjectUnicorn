@@ -19,7 +19,7 @@ class Views
             Promise.all([
                 System.import(viewSource),
                 System.import(viewModelSource)
-            ]).then(function(modules) {
+            ]).then(modules => {
                 tagWithView.innerHTML = modules[0].body.innerHTML;
                 
                 var viewModelType = modules[1][filename];
