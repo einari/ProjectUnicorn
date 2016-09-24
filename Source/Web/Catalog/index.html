@@ -1,14 +1,15 @@
-<table>
-    <thead>
-    </thead>
-    <tbody data-bind="foreach: products">
-        <tr>
-            <td data-bind="text: title">
-            </td>
-            <td>
-                <button data-bind="click: $root.addToCart.bind($root, $data)">Add</button>
-            </td>
-        </tr>
-    </tbody>
+<h1>Catalog</h1>
 
-</table>
+<div class="container">
+    <div class="row" data-bind="foreach: products">
+        <div class="col-sm-1" style="width: 200px; height:300px; border: 1px dashed #bbb;">
+            <div style="position: absolute; right: .9375rem; font-size: .873rem; font-weight: 700;" data-bind="text: 'Sku. '+sku"></div>
+            <img data-bind="attr: { src: 'https://www.bildeler.no/bilder/varer/630x475/Vare_'+sku+'_1.jpg'}" style="width: 180px; padding-top:10px;">
+            <b data-bind="text: title"></b>
+            <br>
+            <div data-bind="text: description"></div>
+            <button style="width: 170px; position: absolute; bottom: 3px; height: 32px;" data-bind="click: $root.addToCart.bind($root, $data)">Add to cart</button>
+        </div>
+    </div>
+
+</div>
