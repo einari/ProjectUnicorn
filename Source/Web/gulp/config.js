@@ -72,6 +72,7 @@ class paths {
             `${this.rootDir}/**/*.jpeg`,
             `${this.rootDir}/**/*.gif`,
             `${this.rootDir}/**/*.png`,
+            `${this.rootDir}/fonts/**/*`,
             `!${this.rootDir}/node_modules/**/*`,
             `!${this.outputDir}/**/*`
         ]
