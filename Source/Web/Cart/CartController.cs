@@ -16,12 +16,14 @@ namespace Web.Cart
 
 
         [HttpPut]
-        public void Put([FromBody] string sku, [FromBody] int quantity)
+        public void Put([FromBody]AddItemsToCart command)
         {
-            if( sku == "slow") Thread.Sleep(1000);
-            if( sku == "superslow") Thread.Sleep(10000);
+            if( command.Sku == "slow") Thread.Sleep(1000);
+            if( command.Sku == "superslow") Thread.Sleep(10000);
 
-            _cartHub.Clients.All.itemAdded(new {sku = sku, quantity = quantity});
+            Console.WriteLine($"Adding {command.Quantity} of {command.Sku}");
+
+            _cartHub.Clients.All.itemAdded(new {sku = command.Sku, quantity = command.Quantity});
         }
     }
 }

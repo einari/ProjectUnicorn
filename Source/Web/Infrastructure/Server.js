@@ -23,12 +23,22 @@ class Server
     }
 
     put(url, parameters) {
+        let actualUrl = url;
+        let firstParameter = true;
+        for( let parameter in parameters ) {
+            if( firstParameter ) {
+                actualUrl = actualUrl.concat("?");
+                firstParameter = false;
+            } else actualUrl = actualUrl.concat("&");
+            actualUrl = actualUrl.concat(`${parameter}=${parameters[parameter]}`);
+        }
+
         let promise = new Promise((resolve, reject) => {
             $.ajax({
-                url: url,
+                url: actualUrl,
                 type: "PUT",
                 dataType: "json",
-                data: parameters,
+                data: JSON.stringify(parameters),
                 contentType: "application/json; charset=utf-8",
                 complete: (result, statusAsText) => {
                     resolve(result);
