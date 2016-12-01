@@ -28,7 +28,8 @@
         "Microsoft.Extensions.Logging.Debug": "1.0.0",
         "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
         "Microsoft.AspNetCore.SignalR.Server": "0.2.0-*",
-        "Microsoft.AspNetCore.WebSockets": "0.2.0-*"
+        "Microsoft.AspNetCore.WebSockets": "0.2.0-*",
+        "StructureMap.Microsoft.DependencyInjection": "1.0.0"
     },
     "tools": {
         "Microsoft.DotNet.Watcher.Tools": {

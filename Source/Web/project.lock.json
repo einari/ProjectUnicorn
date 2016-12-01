@@ -1661,6 +1661,34 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "structuremap/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Runtime.Loader": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.5/StructureMap.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/StructureMap.dll": {}
+        }
+      },
+      "StructureMap.Microsoft.DependencyInjection/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "structuremap": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/StructureMap.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/StructureMap.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -2131,7 +2159,11 @@
           "lib/portable-net45+win8+wpa81/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netstandard1.3/_._": {
+          "runtimes/unix/lib/netstandard1.3/System.IO.Compression.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.IO.Compression.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -2154,7 +2186,7 @@
           "ref/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/_._": {}
+          "lib/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         }
       },
       "System.IO.FileSystem/4.0.1": {
@@ -2389,7 +2421,11 @@
           "lib/portable-net45+win8+wpa81/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netstandard1.3/_._": {
+          "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.Http.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -4845,6 +4881,31 @@
         "lib/netstandard1.0/_._",
         "runtime.native.System.Security.Cryptography.4.0.0.nupkg.sha512",
         "runtime.native.System.Security.Cryptography.nuspec"
+      ]
+    },
+    "structuremap/4.3.0": {
+      "sha512": "6Ixw5S17bT9EwumSmNKW1aJ/fDP/D5Upo0vk3waLQLT2V8iDJQPsMbnLQc8WR72WLeEAwWf/kHA6iIpTm9IzDA==",
+      "type": "package",
+      "path": "structuremap/4.3.0",
+      "files": [
+        "StructureMap.4.3.0.nupkg.sha512",
+        "StructureMap.nuspec",
+        "lib/net45/StructureMap.dll",
+        "lib/netstandard1.3/StructureMap.dll",
+        "lib/netstandard1.5/StructureMap.dll"
+      ]
+    },
+    "StructureMap.Microsoft.DependencyInjection/1.0.0": {
+      "sha512": "cDyE3cV2eLMxz10JzDSz3t4UNdTi7vXT6PQLLrEmoJlJEf9QZwGHY990hwPjj9sVkLyTvlZMqhZS+T6jgrpUTA==",
+      "type": "package",
+      "path": "StructureMap.Microsoft.DependencyInjection/1.0.0",
+      "files": [
+        "StructureMap.Microsoft.DependencyInjection.1.0.0.nupkg.sha512",
+        "StructureMap.Microsoft.DependencyInjection.nuspec",
+        "lib/net451/StructureMap.Microsoft.DependencyInjection.dll",
+        "lib/net451/StructureMap.Microsoft.DependencyInjection.xml",
+        "lib/netstandard1.3/StructureMap.Microsoft.DependencyInjection.dll",
+        "lib/netstandard1.3/StructureMap.Microsoft.DependencyInjection.xml"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -9370,7 +9431,8 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
-      "Microsoft.NETCore.App >= 1.0.0"
+      "Microsoft.NETCore.App >= 1.0.0",
+      "StructureMap.Microsoft.DependencyInjection >= 1.0.0"
     ],
     ".NETCoreApp,Version=v1.0": []
   },
