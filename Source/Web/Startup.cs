@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
+using StructureMap;
 
 namespace Web
 {
@@ -24,16 +25,36 @@ namespace Web
 
         public IConfigurationRoot Configuration { get; }
 
+        IServiceProvider InitializeContainer(IServiceCollection services)
+        {
+            var container = new Container();
+
+            container.Configure(config =>
+            {
+                config.Scan(_ =>
+                {
+                    _.AssemblyContainingType<Startup>();
+                    _.RegisterConcreteTypesAgainstTheFirstInterface();
+                    _.WithDefaultConventions();
+                });
+
+                config.Populate(services);
+            });
+
+            return container.GetInstance<IServiceProvider>();
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSignalR(options => 
+            services.AddSignalR(options =>
             {
                 options.Hubs.EnableDetailedErrors = true;
             });
 
             // Add framework services.
             services.AddMvc();
+
+            //return InitializeContainer(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
