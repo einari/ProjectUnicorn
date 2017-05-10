@@ -34,7 +34,6 @@ export function javaScriptPipeline(stream)
         })
         .pipe(sourcemaps.write(".", {
             mapSources: file => {
-                console.log("Hello");
                 return "Blah"
             },
             sourceRoot: "../"

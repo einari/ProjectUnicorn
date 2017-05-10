@@ -44,7 +44,7 @@ namespace Web
             return container.GetInstance<IServiceProvider>();
         }
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR(options =>
             {
@@ -54,7 +54,7 @@ namespace Web
             // Add framework services.
             services.AddMvc();
 
-            //return InitializeContainer(services);
+            return InitializeContainer(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,15 +63,17 @@ namespace Web
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            var folder = Path.Combine(env.ContentRootPath, @"wwwroot");
-            Console.WriteLine($"Static Content is at {folder}");
-
-            app.UseStaticFiles(new StaticFileOptions
+            app.UseDefaultFiles();
+            var staticFilesPath = Path.Combine(env.ContentRootPath, @"wwwroot");
+            app.UseStaticFiles(new StaticFileOptions()
             {
-                FileProvider = new PhysicalFileProvider(folder),
-                RequestPath = new PathString(string.Empty)
+                OnPrepareResponse = context =>
+                {
+                    context.Context.Response.Headers.Add("Cache-Control", "no-cache, no-store");
+                    context.Context.Response.Headers.Add("Expires", "-1");
+                },
+                FileProvider = new PhysicalFileProvider(staticFilesPath),
             });
-
             app.UseMvc();
 
             app.UseWebSockets();

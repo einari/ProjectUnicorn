@@ -1,6 +1,6 @@
 let rootDir = process.cwd();
-let outputDir = `${rootDir}/Distribution`;
-let sourceDir = `${rootDir}/Source`;
+let outputDir = `${rootDir}/wwwroot`;
+let sourceDir = `${rootDir}`;
 
 const _rootDir = new WeakMap();
 const _outputDir = new WeakMap();
