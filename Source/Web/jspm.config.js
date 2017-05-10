@@ -62,7 +62,6 @@ SystemJS.config({
 });
 
 SystemJS.config({
-    defaultJSExtensions: true,
     packageConfigPaths: [
         "npm:@*/*.json",
         "npm:*.json",

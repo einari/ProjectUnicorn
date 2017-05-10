@@ -33,8 +33,8 @@ export function javaScriptPipeline(stream)
             console.log(error.codeFrame);
         })
         .pipe(sourcemaps.write(".", {
-            mapSources: file => {
-                return "Blah"
+            mapSources: (sourcePath, file) => {
+                return `../${sourcePath}`;
             },
             sourceRoot: "../"
         }))
